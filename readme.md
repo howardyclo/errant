@@ -27,6 +27,7 @@ A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||1
 - The output of sample files: `sample.m2.txt`.
 - Generate output file by command `python parallel_to_m2.py -orig ./sample.src.txt -cor ./sample.tgt.txt -out ./sample.m2.txt -lev`
 - For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
+- Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)
 
 In M2 format, a line preceded by S denotes an original sentence while a line preceded by A indicates an edit annotation. Each edit line consists of the start and end token offset of the edit, the error type, and the tokenized correction string. The next two fields are included for historical reasons (see the CoNLL-2014 shared task) while the last field is the annotator id.  
 
