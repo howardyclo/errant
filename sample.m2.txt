@@ -1,0 +1,41 @@
+S This is a grammatical error .
+T This is a grammatical error .
+A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||0
+
+S this is a grammatical error .
+T This is a grammatical error .
+A 0 1|||R:ORTH|||this|||This|||0|||1|||0
+
+S This is a grammatically error .
+T This is a grammatical error .
+A 3 4|||R:MORPH|||grammatically|||grammatical|||3|||4|||0
+
+S This a grammatical error .
+T This is a grammatical error .
+A 1 1|||M:VERB||||||is|||1|||2|||0
+
+S This is a a grammatical error .
+T This is a grammatical error .
+A 2 3|||U:DET|||a||||||2|||2|||0
+
+S This grammatical error .
+T This is a grammatical error .
+A 1 1|||M:VERB||||||is|||1|||2|||0
+A 1 1|||M:DET||||||a|||2|||3|||0
+
+S This a is grammatical error .
+T This is a grammatical error .
+A 1 2|||R:OTHER|||a|||is|||1|||2|||0
+A 2 3|||R:OTHER|||is|||a|||2|||3|||0
+
+S This a is error grammatical .
+T This is a grammatical error .
+A 1 2|||U:DET|||a||||||1|||1|||0
+A 3 4|||R:OTHER|||error|||a|||2|||3|||0
+A 5 5|||M:NOUN||||||error|||4|||5|||0
+
+S This a is error .
+T This is a grammatical error .
+A 1 1|||M:VERB||||||is|||1|||2|||0
+A 2 3|||R:OTHER|||is|||grammatical|||3|||4|||0
+

@@ -1,14 +1,14 @@
 # Copyright (c) 2016 Mariano Felice and Christopher Bryant
 #
 # This file contains an implementation of the Damerau-Levenshtein
-# algorithm (restricted edit distance version) to align two sentences, 
+# algorithm (restricted edit distance version) to align two sentences,
 # as described in the following paper:
 #
-# Mariano Felice, Christopher Bryant and Ted Briscoe. 2016. 
-# Automatic extraction of learner errors in ESL sentences using 
-# linguistically enhanced alignments. In Proceedings of the 26th 
-# International Conference on Computational Linguistics (COLING 2016), 
-# pp. 825-835, Osaka, Japan. Japanese Association for Natural Language 
+# Mariano Felice, Christopher Bryant and Ted Briscoe. 2016.
+# Automatic extraction of learner errors in ESL sentences using
+# linguistically enhanced alignments. In Proceedings of the 26th
+# International Conference on Computational Linguistics (COLING 2016),
+# pp. 825-835, Osaka, Japan. Japanese Association for Natural Language
 # Processing.
 #
 # Please, cite this paper when using this script in your work.
@@ -17,7 +17,7 @@
 # algorithm by Kyle Gorman, available at: https://gist.github.com/kylebgorman/8034009
 # The original license and description are included below.
 #
-# This implementation adds support for token transpositions of arbitrary 
+# This implementation adds support for token transpositions of arbitrary
 # length, e.g. A B C --> B C A.
 #
 # ORIGINAL LICENSE:
@@ -92,19 +92,19 @@ import pprint
 # Default cost functions.
 
 def INSERTION(A, A_extra=None, cost=1):
-  return cost
+    return cost
 
 def DELETION(A, A_extra=None, cost=1):
-  return cost
+    return cost
 
 def SUBSTITUTION(A, B, A_extra=None, B_extra=None, cost=1):
-  return cost
+    return cost
 
 def TRANSPOSITION(A, B, A_extra=None, B_extra=None):
-  # Change to cost=float('inf') to have standard edit distance by default
-  # A and B should be the same length
-  cost = len(A) - 1 # or len(B) -1 
-  return cost
+    # Change to cost=float('inf') to have standard edit distance by default
+    # A and B should be the same length
+    cost = len(A) - 1 # or len(B) -1
+    return cost
 
 Trace = collections.namedtuple("Trace", ["cost", "ops"])
 
@@ -187,10 +187,10 @@ class WagnerFischer(object):
         for j in range(1, self.bsz + 1):
             self[0][j] = Trace(self[0][j - 1].cost + self.costs["I"](B[j - 1], B_extra[j - 1] if B_extra else None),
                                {"I"})
-        
+
         ## Fills in rest.
         for i in range(len(A)):
-            for j in range(len(B)):                
+            for j in range(len(B)):
                 # Cleans it up in case there are more than one check for match
                 # first, as it is always the cheapest option.
                 if A[i] == B[j]:
@@ -214,7 +214,7 @@ class WagnerFischer(object):
                             min_val = min(min_val, costT)
                             break
                         k += 1
-                    
+
                     trace = Trace(min_val, []) # Use a list to preserve the order
                     # Adds _all_ operations matching minimum value.
                     if costD == min_val:
@@ -226,7 +226,7 @@ class WagnerFischer(object):
                     if costT == min_val:
                         trace.ops.append("T" + str(k+1))
                     self[i + 1][j + 1] = trace
-                                        
+
         # Stores optimum cost as a property.
         self.cost = self[-1][-1].cost
 
@@ -335,7 +335,6 @@ if __name__ == "__main__":
     #doctest.testmod()
     a = raw_input("A: ").split()
     b = raw_input("B: ").split()
-    al = WagnerFischer(a, b).alignments()   
+    al = WagnerFischer(a, b).alignments()
     for a in al:
         print(a)
-
