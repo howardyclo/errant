@@ -12,6 +12,15 @@ If you make use of this code, please cite the above papers.
 
 The main aim of ERRANT is to automatically annotate parallel English sentences with error type information. Specifically, given an original and corrected sentence pair, ERRANT will extract the edits that transform the former to the latter and then classify them according to a rule-based error type framework. This can be used to standardise parallel datasets or facilitate detailed error type evaluation. The annotated output file is in M2 format and an  evaluation script is provided.
 
+### Difference between this repo and the original one
+- In this repo, we modified the output format, with more useful information.
+- See sample parallel sentences files: `sample.src.txt` and `sample.tgt.txt`.
+- The output of sample files: `sample.m2.txt`.
+- Every source(S) and target(T) sentence contains several features. The format is as follows: `word|prev_word|next_word|head_word|left_edge_word|right_edge_word|pos|dep`.
+- Generate output file by command `python parallel_to_m2.py -orig ./sample.src.txt -cor ./sample.tgt.txt -out ./sample.m2.txt -lev`
+- For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
+- Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)
+
 ### Example:  
 **Original**: This are gramamtical sentence .  
 **Corrected**: This is a grammatical sentence .  
@@ -21,14 +30,6 @@ A 1 2|||R:VERB:SVA|||is|||REQUIRED|||-NONE-|||0
 A 2 2|||M:DET|||a|||REQUIRED|||-NONE-|||0  
 A 2 3|||R:SPELL|||grammatical|||REQUIRED|||-NONE-|||0  
 A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||1
-
-### Example (2018/3/17 Updated):
-- See sample parallel sentences files: `sample.src.txt` and `sample.tgt.txt`.
-- The output of sample files: `sample.m2.txt`.
-- Every source(S) and target(T) sentence contains several features. The format is as follows: `word|prev_word|next_word|head_word|left_edge_word|right_edge_word|pos|dep`.
-- Generate output file by command `python parallel_to_m2.py -orig ./sample.src.txt -cor ./sample.tgt.txt -out ./sample.m2.txt -lev`
-- For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
-- Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)
 
 In M2 format, a line preceded by S denotes an original sentence while a line preceded by A indicates an edit annotation. Each edit line consists of the start and end token offset of the edit, the error type, and the tokenized correction string. The next two fields are included for historical reasons (see the CoNLL-2014 shared task) while the last field is the annotator id.  
 
