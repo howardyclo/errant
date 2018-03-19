@@ -25,6 +25,7 @@ A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||1
 ### Example (2018/3/17 Updated):
 - See sample parallel sentences files: `sample.src.txt` and `sample.tgt.txt`.
 - The output of sample files: `sample.m2.txt`.
+- Every source(S) and target(T) sentence contains several features. The format is as follows: `word|prev_word|next_word|head_word|left_edge_word|right_edge_word|pos|dep`.
 - Generate output file by command `python parallel_to_m2.py -orig ./sample.src.txt -cor ./sample.tgt.txt -out ./sample.m2.txt -lev`
 - For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
 - Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)

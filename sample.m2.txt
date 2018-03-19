@@ -1,41 +1,41 @@
-S This is a grammatical error .
-T This is a grammatical error .
+S This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||0
 
-S this is a grammatical error .
-T This is a grammatical error .
+S this|this|is|is|this|this|DET|nsubj is|this|a|is|this|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 0 1|||R:ORTH|||this|||This|||0|||1|||0
 
-S This is a grammatically error .
-T This is a grammatical error .
+S This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatically|error|a|a|DET|det grammatically|a|error|error|grammatically|grammatically|ADV|amod error|grammatically|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 3 4|||R:MORPH|||grammatically|||grammatical|||3|||4|||0
 
-S This a grammatical error .
-T This is a grammatical error .
+S This|This|a|error|This|This|DET|det a|This|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|error|This|.|NOUN|ROOT .|error|.|error|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 1 1|||M:VERB||||||is|||1|||2|||0
 
-S This is a a grammatical error .
-T This is a grammatical error .
+S This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|a|error|a|a|DET|det a|a|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 2 3|||U:DET|||a||||||2|||2|||0
 
-S This grammatical error .
-T This is a grammatical error .
+S This|This|grammatical|error|This|This|DET|det grammatical|This|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|error|This|.|NOUN|ROOT .|error|.|error|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 1 1|||M:VERB||||||is|||1|||2|||0
 A 1 1|||M:DET||||||a|||2|||3|||0
 
-S This a is grammatical error .
-T This is a grammatical error .
+S This|This|a|is|This|This|DET|nsubj a|This|is|is|a|a|DET|nsubj is|a|grammatical|is|This|.|VERB|ROOT grammatical|is|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|grammatical|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 1 2|||R:OTHER|||a|||is|||1|||2|||0
 A 2 3|||R:OTHER|||is|||a|||2|||3|||0
 
-S This a is error grammatical .
-T This is a grammatical error .
+S This|This|a|a|This|This|DET|det a|This|is|is|This|a|DET|nsubj is|a|error|is|This|.|VERB|ROOT error|is|grammatical|is|error|grammatical|NOUN|attr grammatical|error|.|error|grammatical|grammatical|ADJ|amod .|grammatical|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 1 2|||U:DET|||a||||||1|||1|||0
 A 3 4|||R:OTHER|||error|||a|||2|||3|||0
 A 5 5|||M:NOUN||||||error|||4|||5|||0
 
-S This a is error .
-T This is a grammatical error .
+S This|This|a|is|This|This|DET|nsubj a|This|is|is|a|a|DET|nsubj is|a|error|is|This|.|VERB|ROOT error|is|.|is|error|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
+T This|This|is|is|This|This|DET|nsubj is|This|a|is|This|.|VERB|ROOT a|is|grammatical|error|a|a|DET|det grammatical|a|error|error|grammatical|grammatical|ADJ|amod error|grammatical|.|is|a|error|NOUN|attr .|error|.|is|.|.|PUNCT|punct
 A 1 1|||M:VERB||||||is|||1|||2|||0
 A 2 3|||R:OTHER|||is|||grammatical|||3|||4|||0
 

@@ -27,17 +27,17 @@ def main(args):
     with open(args.orig) as orig, open(args.cor) as cor:
         # Process each pre-aligned sentence pair.
         for orig_sent, cor_sent in tqdm(zip(orig, cor)):
+            # Markup the parallel sentences with spacy (assume tokenized)
+            proc_orig = toolbox.applySpacy(orig_sent.strip(), nlp)
+            proc_cor = toolbox.applySpacy(cor_sent.strip(), nlp)
             # Write the original sentence to the output m2 file.
-            out_m2.write("S "+orig_sent)
-            out_m2.write("T "+cor_sent)
+            out_m2.write("S " + toolbox.formatProcSent(proc_orig) + "\n")
+            out_m2.write("T " + toolbox.formatProcSent(proc_cor) + "\n")
             # Identical sentences have no edits, so just write noop.
             if orig_sent.strip() == cor_sent.strip():
                 out_m2.write("A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||0\n")
             # Otherwise, do extra processing.
             else:
-                # Markup the parallel sentences with spacy (assume tokenized)
-                proc_orig = toolbox.applySpacy(orig_sent.strip(), nlp)
-                proc_cor = toolbox.applySpacy(cor_sent.strip(), nlp)
                 # Auto align the parallel sentences and extract the edits.
                 auto_edits = align_text.getAutoAlignedEdits(proc_orig, proc_cor, nlp, args)
                 # Loop through the edits.
