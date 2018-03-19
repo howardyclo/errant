@@ -21,16 +21,6 @@ The main aim of ERRANT is to automatically annotate parallel English sentences w
 - For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
 - Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)
 
-### Example:  
-**Original**: This are gramamtical sentence .  
-**Corrected**: This is a grammatical sentence .  
-**Output M2**:  
-S This are gramamtical sentence .  
-A 1 2|||R:VERB:SVA|||is|||REQUIRED|||-NONE-|||0  
-A 2 2|||M:DET|||a|||REQUIRED|||-NONE-|||0  
-A 2 3|||R:SPELL|||grammatical|||REQUIRED|||-NONE-|||0  
-A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||1
-
 In M2 format, a line preceded by S denotes an original sentence while a line preceded by A indicates an edit annotation. Each edit line consists of the start and end token offset of the edit, the error type, and the tokenized correction string. The next two fields are included for historical reasons (see the CoNLL-2014 shared task) while the last field is the annotator id.  
 
 A "noop" edit is a special kind of edit that explicitly indicates an annotator/system made no changes to the original sentence. If there is only one annotator, noop edits are optional, otherwise a noop edit should be included whenever at least 1 out of n annotators considered the original sentence to be correct. This is something to be aware of when combining individual m2 files, as missing noops can affect results. 
