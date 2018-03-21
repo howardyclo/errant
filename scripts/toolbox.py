@@ -131,11 +131,10 @@ def formatEdit(edit, coder_id=0):
 
 # Input: SpaCy tokenized sentence.
 # Output: Sequence of tokens and their features.
-def formatProcSent(sent):
+def formatProcSent(sent, feature_delimiter="￨"):
     tokens = [token for token in sent]
     tokens.insert(0, tokens[0])
     tokens.append(tokens[-1])
-    return " ".join(["|".join([tokens[i].text, tokens[i-1].text, tokens[i+1].text,
-                    tokens[i].head.text, tokens[i].left_edge.text, tokens[i].right_edge.text,
-                    tokens[i].pos_, tokens[i].dep_]) for i in range(1, len(tokens)-1)])
-        
+    # Delimiter: Unicode character FFE8 '￨'
+    return " ".join([feature_delimiter.join([tokens[i].text, tokens[i-1].text, tokens[i+1].text,
+                    tokens[i].head.text, tokens[i].pos_, tokens[i].dep_]) for i in range(1, len(tokens)-1)])
