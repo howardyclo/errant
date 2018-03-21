@@ -1,3 +1,11 @@
+S Fine￨Fine￨thanks￨thanks￨ADJ￨amod thanks￨Fine￨thanks￨thanks￨NOUN￨ROOT
+T I￨I￨'m￨'m￨PRON￨nsubj 'm￨I￨fine￨'m￨VERB￨ROOT fine￨'m￨,￨'m￨ADJ￨acomp ,￨fine￨thanks￨'m￨PUNCT￨punct thanks￨,￨.￨'m￨NOUN￨npadvmod .￨thanks￨.￨'m￨PUNCT￨punct
+A 0 0|||M:PRON||||||I|||0|||1|||0
+A 0 0|||M:CONTR||||||'m|||1|||2|||0
+A 0 1|||R:ORTH|||Fine|||fine|||2|||3|||0
+A 1 1|||M:PUNCT||||||,|||3|||4|||0
+A 2 2|||M:PUNCT||||||.|||5|||6|||0
+
 S This￨This￨is￨is￨DET￨nsubj is￨This￨a￨is￨VERB￨ROOT a￨is￨grammatical￨error￨DET￨det grammatical￨a￨error￨error￨ADJ￨amod error￨grammatical￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
 T This￨This￨is￨is￨DET￨nsubj is￨This￨a￨is￨VERB￨ROOT a￨is￨grammatical￨error￨DET￨det grammatical￨a￨error￨error￨ADJ￨amod error￨grammatical￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
 A -1 -1|||noop|||-NONE-|||-NONE-|||-1|||-1|||0
@@ -25,17 +33,15 @@ A 1 1|||M:DET||||||a|||2|||3|||0
 
 S This￨This￨a￨is￨DET￨nsubj a￨This￨is￨is￨DET￨nsubj is￨a￨grammatical￨is￨VERB￨ROOT grammatical￨is￨error￨error￨ADJ￨amod error￨grammatical￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
 T This￨This￨is￨is￨DET￨nsubj is￨This￨a￨is￨VERB￨ROOT a￨is￨grammatical￨error￨DET￨det grammatical￨a￨error￨error￨ADJ￨amod error￨grammatical￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
-A 1 2|||R:OTHER|||a|||is|||1|||2|||0
-A 2 3|||R:OTHER|||is|||a|||2|||3|||0
+A 1 3|||R:WO|||a is|||is a|||1|||3|||0
 
 S This￨This￨a￨a￨DET￨det a￨This￨is￨is￨DET￨nsubj is￨a￨error￨is￨VERB￨ROOT error￨is￨grammatical￨is￨NOUN￨attr grammatical￨error￨.￨error￨ADJ￨amod .￨grammatical￨.￨is￨PUNCT￨punct
 T This￨This￨is￨is￨DET￨nsubj is￨This￨a￨is￨VERB￨ROOT a￨is￨grammatical￨error￨DET￨det grammatical￨a￨error￨error￨ADJ￨amod error￨grammatical￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
-A 1 2|||U:DET|||a||||||1|||1|||0
-A 3 4|||R:OTHER|||error|||a|||2|||3|||0
-A 5 5|||M:NOUN||||||error|||4|||5|||0
+A 1 3|||R:WO|||a is|||is a|||1|||3|||0
+A 3 5|||R:WO|||error grammatical|||grammatical error|||3|||5|||0
 
 S This￨This￨a￨is￨DET￨nsubj a￨This￨is￨is￨DET￨nsubj is￨a￨error￨is￨VERB￨ROOT error￨is￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
 T This￨This￨is￨is￨DET￨nsubj is￨This￨a￨is￨VERB￨ROOT a￨is￨grammatical￨error￨DET￨det grammatical￨a￨error￨error￨ADJ￨amod error￨grammatical￨.￨is￨NOUN￨attr .￨error￨.￨is￨PUNCT￨punct
-A 1 1|||M:VERB||||||is|||1|||2|||0
-A 2 3|||R:OTHER|||is|||grammatical|||3|||4|||0
+A 1 3|||R:WO|||a is|||is a|||1|||3|||0
+A 3 3|||M:ADJ||||||grammatical|||3|||4|||0
 

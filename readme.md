@@ -15,9 +15,22 @@ The main aim of ERRANT is to automatically annotate parallel English sentences w
 ### Difference between this repo and the original one
 - In this repo, we modified the output format, with more useful information.
 - See sample parallel sentences files: `sample.src.txt` and `sample.tgt.txt`.
-- The output of sample files: `sample.m2.txt`.
+- Each output `.m2.txt` file is run with the additional arguments:
+    - `sample.rules.damerau_lev.m2.txt`: default.
+    - `sample.rules.standard_lev.m2.txt`: enable `lev`.
+    - `sample.all_split.damerau_lev.m2.txt`: enable `-merge all-split`.
+    - `sample.all_split.standard_lev.m2.txt`: enable `-merge all-split -lev`.
+    - The difference between `all_split` and `rules` is whether the corrections involve one or more than one tokens.
+    - The difference between `standard_lev` and `damerau_lev` is that `damerau_lev` can find `WO`(word ordering) error.
 - Every source(S) and target(T) sentence contains several features. The format is as follows: `word|prev_word|next_word|head_word|left_edge_word|right_edge_word|pos|dep`.
-- Generate output file by command `python parallel_to_m2.py -orig ./sample.src.txt -cor ./sample.tgt.txt -out ./sample.m2.txt -lev`
+- Generate output file by command (`-merge all-split` and `-lev` will make every correction only involve one word.):
+```
+python parallel_to_m2.py -orig ./sample.src.txt -cor ./sample.tgt.txt -out ./sample.m2.txt \
+-is_tokenized_orig \
+-is_tokenized_cor \
+-merge all-split \
+-lev
+```
 - For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
 - Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)
 
