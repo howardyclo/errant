@@ -15,7 +15,7 @@ The main aim of ERRANT is to automatically annotate parallel English sentences w
 ### Difference between this repo and the original one
 - In this repo, we modified the output format, with more useful information.
 - See sample parallel sentences files: `sample.src.txt` and `sample.tgt.txt`.
-- Each output `.m2.txt` file is run with the additional arguments:
+- Each output `.m2.txt` file is run with the additional arguments (see `gen_m2_pipeline.sh` for reference):
     - `sample.rules.damerau_lev.m2.txt`: default.
     - `sample.rules.standard_lev.m2.txt`: enable `lev`.
     - `sample.all_split.damerau_lev.m2.txt`: enable `-merge all-split`.
@@ -26,8 +26,7 @@ The main aim of ERRANT is to automatically annotate parallel English sentences w
 ```word|prev_word|next_word|head_word|left_edge_word|right_edge_word|pos|dep```.
 - Correction action(A) format is as follows (same as the original one, don't modify this cause it will effect `compare_m2.py`):
 ```A orig_start orig_end|||cat|||cor_str|||REQUIRED|||-NONE-|||coder_id```.
-- Add `-is_tokenized_orig` if your source sentences are pre-tokenized.
-- Add `-is_tokenized_cor` if your target sentences are pre-tokenized.
+- Add `-is_tokenized` if your input sentences are pre-tokenized.
 - For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
 - Please install SpaCy model [`en_core_web_lg`](https://spacy.io/models/en#en_core_web_lg)
 

@@ -126,7 +126,7 @@ def minimiseEdit(edit, orig, cor):
 # Output: An edit in m2 file format.
 def formatEdit(edit, coder_id=0):
     span = " ".join(["A", str(edit[0]), str(edit[1])])
-	return "|||".join([span, edit[2], edit[3], "REQUIRED", "-NONE-", str(coder_id)])
+    return "|||".join([span, edit[2], edit[3], "REQUIRED", "-NONE-", str(coder_id)])
 
 # Input: SpaCy tokenized sentence.
 # Output: Sequence of tokens and their features.
