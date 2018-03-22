@@ -46,7 +46,7 @@ def main(args):
                 out_m2.write("T " + toolbox.formatProcSent(proc_cor, feature_delimiter=args.feature_delimiter) + "\n")
                 # Identical sentences have no edits, so just write noop.
                 if orig_sent.strip() == cor_sent.strip():
-                    out_m2.write("A -1 -1|||noop|||-NONE-|||-NONE-|||-1|||-1|||0\n")
+                    out_m2.write("A -1 -1|||noop|||-NONE-|||REQUIRED|||-NONE-|||0\n")
                 # Otherwise, do extra processing.
                 else:
                     # Auto align the parallel sentences and extract the edits.
