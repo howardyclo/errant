@@ -2,6 +2,7 @@ import argparse
 import os
 import spacy
 from nltk.stem.lancaster import LancasterStemmer
+from nltk.tokenize.moses import MosesDetokenizer
 import scripts.align_text as align_text
 import scripts.cat_rules as cat_rules
 import scripts.toolbox as toolbox
@@ -13,15 +14,12 @@ def main(args):
     basename = os.path.dirname(os.path.realpath(__file__))
     print("Loading SpaCy...")
     # Load Tokenizer and other resources
-    if args.is_tokenized:
-        # https://spacy.io/usage/processing-pipelines
-        print("Note: disable unecessary pipelines: tokenizer, ner, textcat")
-        nlp = spacy.load("en_core_web_lg", disable=['tokenizer', 'ner', 'textcat'])
-    else:
-        print("Note: disable unecessary pipelines: ner, textcats")
-        nlp = spacy.load("en_core_web_lg", disable=['ner', 'textcat'])
+    print("Note: disable unecessary pipelines: ner, textcats")
+    nlp = spacy.load("en_core_web_lg", disable=['ner', 'textcat'])
     # Lancaster Stemmer
     stemmer = LancasterStemmer()
+    # Moses Detokenizer
+    detokenizer = MosesDetokenizer()
     # GB English word list (inc -ise and -ize)
     gb_spell = toolbox.loadDictionary(basename+"/resources/en_GB-large.txt")
     # Part of speech map file
@@ -36,6 +34,11 @@ def main(args):
         # Process each pre-aligned sentence pair.
         for orig_sent, cor_sent in tqdm(zip(orig, cor)):
             try:
+                # Detokenize sents if they're pre-tokenized. Otherwise the result will be wrong.
+                if args.is_tokenized_orig:
+                    orig_sent = detokenizer.detokenize(orig_sent.strip().split(), return_str=True)
+                if args.is_tokenized_cor:
+                    cor_sent = detokenizer.detokenize(cor_sent.strip().split(), return_str=True)
                 # Markup the parallel sentences with spacy (assume tokenized)
                 proc_orig = toolbox.applySpacy(orig_sent.strip(), nlp)
                 proc_cor = toolbox.applySpacy(cor_sent.strip(), nlp)
@@ -85,7 +88,8 @@ if __name__ == "__main__":
                                                             "all-equal: Merge adjacent same-type non-matches; e.g. MSSDI -> M, SS, D, I")
     parser.add_argument("-feature_delimiter", type=str, default="￨",
                         help='The delimiter for word features concatenation.')
-    parser.add_argument("-is_tokenized", help="True if input sentences are pre-tokenized.", action="store_true")
+    parser.add_argument("-is_tokenized_orig", help="True if original sentences are tokenized by space. Otherwise we will detokenized them.", action="store_true")
+    parser.add_argument("-is_tokenized_cor", help="True if corrected sentences are tokenized by space. Otherwise we will detokenized them.", action="store_true")
     args = parser.parse_args()
     # Run the program.
     main(args)

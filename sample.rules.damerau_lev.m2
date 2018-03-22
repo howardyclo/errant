@@ -1,6 +1,6 @@
 S Fine￨Fine￨thanks￨thanks￨ADJ￨amod thanks￨Fine￨thanks￨thanks￨NOUN￨ROOT
-T I￨I￨'￨fine￨PRON￨nsubj '￨I￨m￨fine￨PUNCT￨punct m￨'￨fine￨fine￨NOUN￨advmod fine￨m￨,￨fine￨ADJ￨ROOT ,￨fine￨thanks￨fine￨PUNCT￨punct thanks￨,￨.￨fine￨NOUN￨npadvmod .￨thanks￨.￨fine￨PUNCT￨punct
-A 0 0|||M:OTHER|||I ' m|||REQUIRED|||-NONE-|||0
+T I￨I￨'m￨'m￨PRON￨nsubj 'm￨I￨fine￨'m￨VERB￨ROOT fine￨'m￨,￨'m￨ADJ￨acomp ,￨fine￨thanks￨'m￨PUNCT￨punct thanks￨,￨.￨'m￨NOUN￨npadvmod .￨thanks￨.￨'m￨PUNCT￨punct
+A 0 0|||M:OTHER|||I 'm|||REQUIRED|||-NONE-|||0
 A 0 1|||R:ORTH|||fine|||REQUIRED|||-NONE-|||0
 A 1 1|||M:PUNCT|||,|||REQUIRED|||-NONE-|||0
 A 2 2|||M:PUNCT|||.|||REQUIRED|||-NONE-|||0
