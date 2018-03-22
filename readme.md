@@ -23,7 +23,8 @@ The main aim of ERRANT is to automatically annotate parallel English sentences w
     - The difference between `all_split` and `rules` is whether the corrections involve one or more than one tokens.
     - The difference between `standard_lev` and `damerau_lev` is that `damerau_lev` can find `WO`(word ordering) error.
 - Every source(S) and target(T) sentence contains several features. The format is as follows: `word|prev_word|next_word|head_word|left_edge_word|right_edge_word|pos|dep`.
-- Correction action(A) format is as follows: `A orig_start orig_end|||cat|||orig_str|||cor_str|||cor_start|||cor_end|||coder_id`.
+- Correction action(A) format is as follows:
+`A orig_start orig_end|||cat|||orig_str|||cor_str|||cor_start|||cor_end|||coder_id`.
 - Add `-is_tokenized_orig` if your source sentences are pre-tokenized.
 - Add `-is_tokenized_cor` if your target sentences are pre-tokenized.
 - For development, some scripts aren't indented right. Use `reindent.py` to re-indent the script you want to modify before developement: `python reindent.py -n <script_name.py>`
