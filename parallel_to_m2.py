@@ -34,6 +34,11 @@ def main(args):
         # Process each pre-aligned sentence pair.
         for orig_sent, cor_sent in tqdm(zip(orig, cor)):
             try:
+                # Check sentence length:
+                if len(orig_sent.strip().split()) < 3:
+                    raise Exception('Source sentence is too short.')
+                if len(cor_sent.strip().split()) < 3:
+                    raise Exception('Target sentence is too short.')
                 # Detokenize sents if they're pre-tokenized. Otherwise the result will be wrong.
                 if args.is_tokenized_orig:
                     orig_sent = detokenizer.detokenize(orig_sent.strip().split(), return_str=True)
