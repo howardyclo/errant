@@ -15,7 +15,7 @@ The main aim of ERRANT is to automatically annotate parallel English sentences w
 ### Difference between this repo and the original one
 - In this repo, we modified the output format, with more useful information.
 - See sample parallel sentences files: `sample.src` and `sample.tgt`.
-- It's recommended to use a multi-processing version of `parallel_to_m2.py` -- **`parallel_to_m2_multiprocess.py`** for speeding up the preprocessing.
+- It's recommended to use a multi-processing version of `parallel_to_m2.py` -- **`parallel_to_m2_multiprocess.py`** for speeding up the preprocessing. (You will also need to [install `joblib`](https://pythonhosted.org/joblib/installing.html))
 - Each output `.m2` file is run with the additional arguments (see `gen_m2_pipeline.sh` for reference):
     - `sample.rules.damerau_lev.m2`: default.
     - `sample.rules.standard_lev.m2`: enable `lev`.
